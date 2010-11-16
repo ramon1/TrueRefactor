@@ -1,0 +1,420 @@
+#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass paper
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 1cm
+\topmargin 1in
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Automated Refactoring of Legacy Software Systems to Current Best Practices
+\end_layout
+
+\begin_layout Author
+Isaac Griffith and Stephani Schielke
+\end_layout
+
+\begin_layout Section
+Problem
+\end_layout
+
+\begin_layout Enumerate
+As software engineering evolves, there is an ever increasing desire in industry
+ to use 
+\begin_inset Quotes eld
+\end_inset
+
+sound engineering
+\begin_inset Quotes erd
+\end_inset
+
+ principles to design software.
+ Even though this trend is producing excellent software solutions, there
+ still exists legacy software artifacts which are in need of reengineering
+ or refactoring to meet today's best practices.
+ In essence, due to the poor engineering of legacy software there is an
+ inherent disconnect between those who have the task of attempting to reengineer
+ the code and those who originally engineered it in the first place.
+ This disconnect stems from the ever changing nature of software engineering
+ practices.
+ Given that such a disconnect exists and the changing nature of software
+ engineering principles and practices, the original intention and design
+ choices made in the legacy software systems may be unrecoverable by current
+ engineers (in an orderly amount of time).
+ In order to shorten the amount of time that an engineer requires to understand
+ the legacy system, we propose an automated system which could refactor
+ the legacy system in such a way that it conforms to today's best practices.
+\end_layout
+
+\begin_layout Section
+The Underlying Process
+\end_layout
+
+\begin_layout Standard
+The basic process can be outlined as follows:
+\end_layout
+
+\begin_layout Enumerate
+Initially read in the source code and parse all files into a single graph
+ structure.
+\end_layout
+
+\begin_layout Enumerate
+This graph structure then represents (simultaneously) both the underlying
+ UML of the code as well as the code structure.
+\end_layout
+
+\begin_layout Enumerate
+We then randomly generate a set set of refactorings to be applied.
+ Where each set is a parent allele in the Evolutionary Algorithm.
+ Using this information we randomly select from these alleles two parents
+ and cross them, and produce the next generation.
+\end_layout
+
+\begin_layout Enumerate
+The code graph is then cloned and the refactorings are applied.
+\end_layout
+
+\begin_layout Enumerate
+From the newly modified graph we measure the metrics we are interested in
+ and based on whether each metric is a min or max function we determine
+ the value of that specific set and ordering of refactorings is compared
+ to the overall concepts of understandability, re-usability, and maintainability.
+\end_layout
+
+\begin_layout Enumerate
+This process is continued until the evolutionary algorithm converges and
+ we have an optimal set of refactorings.
+ Convergence here can be measured as a function of the diminishing code
+ smells to a minimum point.
+\end_layout
+
+\begin_layout Enumerate
+At this point we can take the code graph and using the Eclipse Modeling
+ Framework, generate both the code, UML, and potentially other types of
+ documentation.
+\end_layout
+
+\begin_layout Section
+Requirements
+\end_layout
+
+\begin_layout Standard
+As for the current project there are a things that are needed in order to
+ ensure that this process can happen.
+\end_layout
+
+\begin_layout Enumerate
+A Complete set of metrics which not only measure across an entire code base
+ but which specifically target the underlying issues.
+\end_layout
+
+\begin_layout Enumerate
+A means by which we can divide dark programming up into its core notions
+ and then determine the metrics which can be used to quantify those notions.
+\end_layout
+
+\begin_layout Enumerate
+Originally the program worked with a very limited subset of refactoring
+ techniques.
+ We need to expand that set, which means that we need to analyze the set
+ of refactorings that exist today and determine which apply and how to use
+ them (via graph theory).
+\end_layout
+
+\begin_layout Enumerate
+Although the Eclipse Modeling Framework (EMF) provides a complete set of
+ tools that allows us to pragmatically generate both code and models, we
+ need to fully investigate and design the connection between the current
+ ERRS framework and the EMF.
+\end_layout
+
+\begin_layout Enumerate
+Determine projects we can test this method on.
+\end_layout
+
+\begin_layout Enumerate
+A set of heuristics by which we can know that the refactoring of the system
+ is complete.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+This can be achieved through the use of what is known as 
+\begin_inset Quotes eld
+\end_inset
+
+Code Smells.
+\begin_inset Quotes erd
+\end_inset
+
+ Code Smells are themselves qualitative heuristics by which one can determine
+ locations within a code base which need to be refactored.
+\end_layout
+
+\begin_layout Enumerate
+If we are to also apply this approach using the same setup as the metrics
+ via a Strategy/Template Pattern.
+\end_layout
+
+\begin_layout Enumerate
+In order to use Code Smells heuristics, we will need to do the following:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Determine a way in which we can quantify the 
+\begin_inset Quotes eld
+\end_inset
+
+Code Smells
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Determine a means by which we can connect the metrics required for code
+ smells to the metrics required for the overall project
+\end_layout
+
+\begin_layout Enumerate
+Implement the code
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Although there is no means by which we can provide a control group for this
+ experiment (in the literature there are other algorithms which represent
+ a means of partially automated refactoring, but none perform completely
+ automated refactoring).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Finally we also need a means by which we can compare the input X output
+ relation for the original code to the input X output relation of the generated
+ code.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Perhaps some notion of Integration/Functional Testing will be needed
+\end_layout
+
+\begin_layout Enumerate
+This idea needs only to be explored in deeper depth
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Metrics
+\end_layout
+
+\begin_layout Enumerate
+Code Qualities and their corresponding metrics
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Understandability is measured by:
+\end_layout
+
+\begin_layout Enumerate
+Resusability is measured by:
+\end_layout
+
+\begin_layout Enumerate
+Maintainability is measured by:
+\end_layout
+
+\begin_layout Enumerate
+Modularity is measured by:
+\end_layout
+
+\begin_layout Enumerate
+Effectiveness of Refactoring: combination of the metrics corresponding to
+ the above qualities.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Code Smells
+\end_layout
+
+\begin_layout Section
+Significance
+\end_layout
+
+\begin_layout Itemize
+Math
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Provide a set of mathematically rigorous metrics for software complexity
+ through measurement of internal attributes
+\end_layout
+
+\begin_layout Itemize
+Use these metrics to understand the relationships between internal and external
+ software attributes
+\end_layout
+
+\begin_layout Itemize
+Define precisely what mathematical properties characterize the concepts
+ used in these measurements in a generic way so that they may be used 
+\end_layout
+
+\begin_layout Itemize
+Maintain a clear distinction between software document structure complexity
+ and psychological complexity throughout the project and metrics
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Quantification of Quantitative of both rationality and understanding
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Graph Theory work: There exists a set of refactorings (which do not require
+ human interaction) for which we can define graph manipulations to adjust
+ a graph representing the code
+\end_layout
+
+\begin_layout Itemize
+Connecting metrics to the Dark Programming Concept
+\end_layout
+
+\begin_layout Itemize
+Potentially quantifying the underlying notion of code smells allowing both
+ this software to have multiple avenues of research, but also to perhaps
+ provide better insight into the concept of Code Smells for both future
+ research and other engineers as well.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Software Engineering
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Providing a tool to convert legacy code to today's standards and best practices
+ as well as regenerating portions of project documentation
+\end_layout
+
+\begin_layout Itemize
+This then allows the code to be read more easily, to be maintained more
+ easily, and to be reused more easily.
+ All of this is essential to current Software Engineering principles, but
+ what is lacking in older software and in software that is still maintained
+ but maintained by programmers who do not necessarily understand either
+ the code itself or good engineering principles.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Philosophy
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This project presents work in a new paradigm of computing - A combination
+ of the the Technocratic and Scientific paradigmns.
+\end_layout
+
+\begin_layout Itemize
+Dark Programming: Rationality and the logic to understand programs (which
+ is a major question of PCS)
+\end_layout
+
+\begin_layout Itemize
+PCS: What do Computer Scientists Do: This research attempts to provide an
+ answer (at least partially) to the question of what is a rational program
+ and how can we re-infuse the rationality lost over time.
+ This is how we can make programs more understandable after the original
+ developers left and the code has not been touched for some time.
+\end_layout
+
+\end_deeper
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "1"
+key "DarkProg"
+
+\end_inset
+
+Janlert, Lars-Erik.
+ "Dark Programming and the Case for the Rationality of Programs." 
+\emph on
+Journal of Applied Logic
+\emph default
+ 6 (2008): 545-52.
+ Print.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "2"
+key "Refactoring"
+
+\end_inset
+
+Fowler, Martin.
+ 
+\emph on
+Refactoring: Improving the Design of Existing Code.
+
+\emph default
+ New York: Addison Wesley Longman, Inc, 1999.
+ 1-407.
+ Print
+\end_layout
+
+\end_body
+\end_document

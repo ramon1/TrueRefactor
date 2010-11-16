@@ -1,0 +1,19 @@
+#deliveryOutput #backButton,#deliveryOutput #estimate,#deliveryOutput .backButton{display:none;}
+#deliveryOutput #notes{border:none;}
+#deliveryOutput{padding:0;}
+.leftPanel,.rightPanel,.toolbar,.try-new-beta-bar,.results-paging,.results-add-all,.result-list-sort,#coverScreenSynonyms,div.popupContainer,.leftCollapsible,.rightCollapsible,.add-to-folder,.result-list-save-search,.green-footer,.nav_tabs,.find_field_outer,.find-field-controls,.cluster-container,.doctype_results_tabs,.results-top-nav,.result-list-view,.results-bottom-nav,.toolbar-links,.outer-container-top-left,.outer-container-bottom-left,.navTabs,.results-find-area,.subtoolbar,.footer div a,.ehostfooter div a,.result_list_header a{display:none!important;}
+.customerLogo{float:none;text-align:right;margin-bottom:-2.75em;position:relative;}
+.resultListPanel{margin:0!important;background:transparent;border:0!important;background-color:transparent!important;padding:0!important;}
+.find-field-simple,.find-field-qbuilder{margin-bottom:0!important;}
+body{font-size:11pt;font-family:Helvetica,sans-serif;min-width:0;}
+.resultList,.result-list-top,ul.result-list li.result-list-li,.main-content,.result-list-record,.results-no-clusters,.main-table-content-cell{border:0!important;}
+.results-with-clusters ul.result-list,ul.result-list{float:none;clear:left;}
+.result-list li{page-break-inside:avoid;}
+.record-additional{display:inline;white-space:nowrap;}
+.relevance-meter{border-left:0;}
+.record-formats-wrapper{display:inline;}
+.results-with-clusters ul.result-list{width:100%!important;}
+div.outer-container-right{margin:0!important;padding:0!important;}
+.large-bold-italic{font-size:14pt;}
+.medium-normal,.medium-font,.abstract,.medium-normal-italic,.medium-normal-red,.medium-bold,.local-note-label,.ref-times-cited,.medium-bold-italic,.link-medium,.link-medium-bold,.disabled-link-medium-bold,.navigation-link,.body-paragraph{font-size:11pt;}
+.small-normal,.small-warning-text,.small-normal-warning,.small-normal-italic,.small-bold,.small-bold-italic,.small-bold-disabled,.small-bold-warning,.link-small,.link-small-bold{font-size:10pt;}

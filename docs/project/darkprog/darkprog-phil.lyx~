@@ -1,0 +1,218 @@
+#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+What is Dark Programming?
+\end_layout
+
+\begin_layout Enumerate
+Traditional programmig involves a subjective method (or process) designed
+ to solve a problem and which satisfies some rationale.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DarkProg"
+
+\end_inset
+
+ This rationale is typically managed by the programmer in the form of a
+ set of guiding sound engineering principles.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DarkProg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A dark program is the product of some technique involving emergent behavior
+ and so it does not depend on or involve any subjective method and use of
+ rationales, it is not constrained to obey sound engineering principles.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DarkProg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+A dark program is either a proper program, we just haven't satisfied ourselves
+ that it can be rationally exlained yet, or it is not a program, because
+ it cannot be rationally explained by the justification criterion.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DarkProg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Where the justification criterion is:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+the structure of the program can be explained by the way it contrubutes
+ to achieving some goal 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DarkProg"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Sound engineering principles are a set of desireable properties including
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Understandability
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Predictability
+\end_layout
+
+\begin_layout Enumerate
+Testability
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Maintainability
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Modifiability
+\end_layout
+
+\begin_layout Enumerate
+Amenability to:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+location and correction of errors and performance deficiencies
+\end_layout
+
+\begin_layout Enumerate
+verification and validation efforts
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Enabling of the division of work
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Reusability - Reuse of solutions in future designes
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Darkness of a program in the context of the above problem, is then the quantific
+ation of our ability to understand both the execution of the program, the
+ underlying process embedded in the program, and the design consideration
+ motivating the creation of this program.
+\end_layout
+
+\begin_layout Enumerate
+If we then assume that we can immediately propose a means by which we can
+ adjust the structure of the program, not changing its functionality, in
+ such a way that it conforms to current sound engineering principles, then
+ we have begun the arduous process of 
+\begin_inset Quotes eld
+\end_inset
+
+lightening
+\begin_inset Quotes erd
+\end_inset
+
+ the program.
+ That is, using software engineering metrics which measure the desireable
+ properties mentioned above, we can begin to use techniques, refactoring,
+ to adjust the programs structure.
+ Where, refactoring is a method specifically designed to alter only the
+ structure and not the function, we can then ease the ability to understand
+ the software.
+ Given that these processes are themselve assumed to be in keeping with
+ sound engineering principles, the underlying design choices are immediately
+ understood and all that is truly left is understanding the operation of
+ the program.
+ Therefore, since the understanding of the program execution is itself not
+ what makes the program dark, but instead it is the lack of existing knowledge
+ of the rationality of the program, and given that this process infuse rationale
+ into the program, we have in effect lightened the program.
+\end_layout
+
+\begin_layout Enumerate
+Given that we can design this process and apply this method.
+ Then we can provide a piece of software which can automatically apply code
+ refactoring techniques to an existing bank of code.
+ This then can allow developers, when provided with an older piece of software
+ which they do not understand, to refactor and reshape the code into something
+ they can quickly understand and with complementary documentation, which
+ also eases the ability to understand a project.
+ As more and more software is being built to serve various customers we
+ need such tools to ensure not only that code remains within the scope of
+ best practices as defined by software engineering, but we also need such
+ a tool to maximize the developer's efficiency and productive time.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,50 @@
+body,#innerContainer{background-image:none;}
+#extra1,#extra2{display:none;}
+#mainContentArea,#footerControl{border:none;}
+#content{padding:20px 0;}
+table.fieldsCollection{width:100%;margin:10px 0;}
+table.fieldsCollection td{padding:0 100px 0 10px;}
+.customFieldsRow{padding:10px;}
+.customFieldsRow h2.customFieldsHeader{margin:10px -10px;}
+.sub-section-header{border-right:none;border-left:none;font-weight:normal;}
+#contentFooter{position:relative;margin:0;}
+#content:after,#delivery-print:after,#delivery-save:after,#delivery-export:after,#delivery-email-inner:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+#content,#delivery-print,#delivery-save,#delivery-export,#delivery-email-inner{display:inline-block;}
+#content,#delivery-print,#delivery-save,#delivery-export,#delivery-email-inner{display:block;}
+#contentHeader{margin-right:0;margin-left:0;}
+#contentFooter{margin:0;}
+#delivery-print,#delivery-email,#delivery-save,#delivery-export,#delivery-email-inner{border-left:solid 1px;border-right:solid 1px;}
+#delivery-export .email-fields{height:230px;}
+#save-options,#save-fields{padding:30px 30px;float:left;width:45%;}
+#print-fields,.delivery-options,.email-fields{float:left;width:40%;padding:30px 0 50px 40px;}
+.delivery-options #delivery-formats select{display:block;margin:5px 0 5px 20px;}
+.delivery-options #delivery-formats label,.email-fields label{font-weight:bold;}
+.delivery-options legend{font-weight:bold;display:block;margin-bottom:20px;}
+#delivery-content label{vertical-align:bottom;}
+.email-fields{clear:left;float:left;width:45%;border-right:solid 1px #ccc;}
+.email-fields dl{margin:0;padding:0;}
+.email-fields dt{float:left;text-align:right;width:145px;}
+.email-fields dd{margin:0 0 15px 160px;}
+.email-fields .comment{display:block;font-weight:normal;}
+.email-fields .note{display:block;font-weight:normal;line-height:1.5;margin:0 0 0 160px;padding-bottom:10px;}
+.email-text{border:1px solid #7F9DB9;font-size:120%;width:90%;}
+#delivery-email-inner .section-footer{position:absolute;bottom:24px;left:10px;z-index:2;}
+#deliveryOutput{padding:10px 15px;}
+#deliveryOutput #notes{border-bottom:solid 1px #000;}
+#deliveryOutput #estimate{color:#F00;font-weight:bold;}
+#deliveryOutput #records{padding:10px;}
+#deliveryOutput .delivery-title{font-size:1.2em;font-weight:bold;margin:5px;padding-bottom:5px;text-align:center;}
+#deliveryOutput{text-align:justify;}
+#deliveryOutput .print-citation{text-align:left;}
+#deliveryOutput .centered img{display:block;margin:0 auto;}
+#deliveryOutput .centered{text-align:center;display:block;}
+#deliveryOutput .medium-bold{font-weight:bold;}
+.print-ft-content{padding:0 22px;}
+.delivmngr-toolbar-link{color:#0301D0;font-size:.92em;font-weight:bolder;text-align:left;text-decoration:underline;}
+.body-paragraph{font-weight:normal;margin-bottom:16px;margin-top:0;}
+.print-citation dt{clear:left;float:left;padding-top:5px;width:160px;}
+.print-citation dd{margin-left:164px;padding-top:5px;}
+#print-fields .estimate_show,#save-fields .estimate_show{display:none;font-weight:bold;margin-bottom:5px;}
+.rtac table,#tblCatalogHoldings{width:auto;border:1px solid #ccc;}
+.rtac table th,#tblCatalogHoldings th{border:1px solid #ccc;background-color:#ECECEC!important;color:#000;}
+.rtac table td,#tblCatalogHoldings td{border:1px solid #ccc;}
