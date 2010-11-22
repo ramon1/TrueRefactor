@@ -3,106 +3,98 @@
  */
 package truerefactor.graph;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Isaac
+ *
  */
-public class MethodNode extends Node {
+public class MethodNode extends CodeNode {
 
-    private StatementNode start;
-    private List<String> params;
-    private String name;
-    private ClassNode parentClass;
-
-    public MethodNode(String name, List<String> params) {
-	super();
-	this.name = name;
-	this.params = params;
+    /**
+     * 
+     */
+    private List<CodeNode> statements;
+    /**
+     * 
+     */
+    private List<String> parameters;
+    /**
+     * 
+     */
+    private ClassNode cNode;
+    
+    /**
+     * @return the parameters
+     */
+    public List<String> getParameters()
+    {
+        return parameters;
     }
 
     /**
-     * @return the start
+     * @param parameters the parameters to set
      */
-    public StatementNode getStart() {
-	return start;
+    public void setParameters(List<String> parameters)
+    {
+        this.parameters = parameters;
     }
 
     /**
-     * @param start
-     *            the start to set
+     * @return the cNode
      */
-    public void setStart(StatementNode start) {
-	this.start = start;
+    public ClassNode getcNode()
+    {
+        return cNode;
     }
 
     /**
-     * @return the params
+     * @param cNode the cNode to set
      */
-    public List<String> getParams() {
-	return params;
+    public void setcNode(ClassNode cNode)
+    {
+        this.cNode = cNode;
     }
 
     /**
-     * @param params
-     *            the params to set
+     * 
+     * @param identifier
+     * @param code
      */
-    public void setParams(List<String> params) {
-	this.params = params;
-    }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-	return name;
-    }
-
-    /**
-     * @param name
-     *            the name to set
-     */
-    public void setName(String name) {
-	this.name = name;
+    public MethodNode(String identifier, String code)
+    {
+        super(identifier, code);
+        // TODO Auto-generated constructor stub
     }
 
     /*
      * (non-Javadoc)
-     * 
-     * @see java.lang.Object#clone()
+     * @see truerefactor.graph.CodeNode#add(truerefactor.graph.CodeNode)
      */
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-	// TODO Auto-generated method stub
-	MethodNode temp = (MethodNode) super.clone();
-	temp.setName(String.copyValueOf(name.toCharArray()));
-	
-	List<String> newParams = new ArrayList<String>();
-	for (String param : params) {
-	    newParams.add(String.copyValueOf(param.toCharArray()));
-	}
-	temp.setParams(newParams);
-	temp.setStart((StatementNode) start.clone());
-
-	return temp;
+    public void add(CodeNode child)
+    {
+        // TODO Auto-generated method stub
+        
     }
 
-    /**
-     * @param parentClass
+    /*
+     * (non-Javadoc)
+     * @see truerefactor.graph.CodeNode#remove(truerefactor.graph.CodeNode)
      */
-    public void setParentClass(ClassNode parentClass) {
-	this.parentClass = parentClass;
+    @Override
+    public void remove(CodeNode child)
+    {
+        // TODO Auto-generated method stub
+        
     }
 
-    /**
-     * @return
+    /*
+     * (non-Javadoc)
+     * @see truerefactor.graph.CodeNode#getChild(java.lang.String)
      */
-    public ClassNode getParentClass() {
-	return parentClass;
-    }
-
-    public String getCode()
+    @Override
+    public CodeNode getChild(String identfier)
     {
         // TODO Auto-generated method stub
         return null;

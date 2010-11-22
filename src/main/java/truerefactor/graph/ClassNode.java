@@ -3,130 +3,101 @@
  */
 package truerefactor.graph;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Isaac
+ *
  */
-public class ClassNode extends Node {
-
-    /** */
-    private String className;
-    /** */
-    private List<MethodNode> methods;
-    /** */
-    private List<FieldNode> fields;
-    /** */
-    private PackageNode pkg;
+public class ClassNode extends CodeNode {
 
     /**
-     * @param className
+     * 
      */
-    public ClassNode(String className) {
-	super();
-	this.className = className;
-	methods = new ArrayList<MethodNode>();
-	fields = new ArrayList<FieldNode>();
+    private List<CodeNode> attributes;
+    /**
+     * 
+     */
+    private List<CodeNode> methods;
+    /**
+     * 
+     */
+    private PackageNode pNode;
+    
+    /**
+     * 
+     * @param identifier
+     * @param code
+     */
+    public ClassNode(String identifier, String code)
+    {
+        super(identifier, code);
+        // TODO Auto-generated constructor stub
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see truerefactor.graph.CodeNode#add(truerefactor.graph.CodeNode)
+     */
+    @Override
+    public void add(CodeNode child)
+    {
+        // TODO Auto-generated method stub
+        
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see truerefactor.graph.CodeNode#remove(truerefactor.graph.CodeNode)
+     */
+    @Override
+    public void remove(CodeNode child)
+    {
+        // TODO Auto-generated method stub
+        
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see truerefactor.graph.CodeNode#getChild(java.lang.String)
+     */
+    @Override
+    public CodeNode getChild(String identfier)
+    {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     /**
-     * @return
+     * @return the attributes
      */
-    public String getName() {
-	return className;
-    }
-
-    /**
-     * @param name
-     */
-    protected void setName(String name) {
-	this.className = name;
-    }
-
-    /**
-     * @param field
-     */
-    public void addField(FieldNode field) {
-	if (!fields.contains(field)) {
-	    fields.add(field);
-	}
-    }
-
-    /**
-     * @param method
-     */
-    public void addMethod(MethodNode method) {
-	if (!methods.contains(method)) {
-	    methods.add(method);
-	}
+    public List<CodeNode> getAttributes()
+    {
+        return attributes;
     }
 
     /**
      * @return the methods
      */
-    public List<MethodNode> getMethods() {
-	return methods;
+    public List<CodeNode> getMethods()
+    {
+        return methods;
     }
 
     /**
-     * @param methods
-     *            the methods to set
+     * @return the pNode
      */
-    public void setMethods(List<MethodNode> methods) {
-	this.methods = methods;
+    public PackageNode getpNode()
+    {
+        return pNode;
     }
 
     /**
-     * @return the fields
+     * @param pNode the pNode to set
      */
-    public List<FieldNode> getFields() {
-	return fields;
+    public void setpNode(PackageNode pNode)
+    {
+        this.pNode = pNode;
     }
 
-    /**
-     * @param fields
-     *            the fields to set
-     */
-    public void setFields(List<FieldNode> fields) {
-	this.fields = fields;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see java.lang.Object#clone()
-     */
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-	ClassNode cNode = (ClassNode) super.clone();
-
-	for (MethodNode mNode : methods) {
-	    MethodNode temp = (MethodNode) mNode.clone();
-	    cNode.addMethod(temp);
-	}
-
-	for (FieldNode fNode : fields) {
-	    FieldNode temp = (FieldNode) fNode.clone();
-	    cNode.addField(temp);
-	}
-
-	cNode.setName(this.getName());
-
-	return cNode;
-    }
-
-    /**
-     * @param pkg
-     */
-    public void setPackage(PackageNode pkg) {
-	this.pkg = pkg;
-    }
-
-    /**
-     * @return
-     */
-    public PackageNode getPackage() {
-	return pkg;
-    }
 }

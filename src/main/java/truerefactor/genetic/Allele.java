@@ -1,70 +1,86 @@
+/**
+ * 
+ */
 package truerefactor.genetic;
 
-import truerefactor.graph.ClassNode;
-import truerefactor.graph.FieldNode;
-import truerefactor.graph.MethodNode;
+import java.util.ArrayList;
+import java.util.List;
 
+import truerefactor.graph.CodeNode;
+import truerefactor.refactor.Refactoring;
+
+/**
+ * 
+ * @author Isaac
+ *
+ */
 public class Allele {
 
-    private String type;
-    private MethodNode method;
-    private FieldNode field;
-    private ClassNode newParent;
-
-    public Allele(MethodNode method, ClassNode newParent) {
-	type = "MoveMethod";
-
-	this.method = method;
-	this.newParent = newParent;
-    }
-
-    public Allele(FieldNode field, ClassNode newParent) {
-	type = "MoveField";
-
-	this.field = field;
-	this.newParent = newParent;
-    }
-
-    public Allele(String type) {
-	this.type = type;
-    }
-
+    /**
+     * 
+     */
+    private Refactoring refactoring;
+    /**
+     * 
+     */
+    private List<CodeNode> operands;
+    
+    /**
+     * 
+     * @param clone
+     */
     public Allele(Allele clone) {
-	this.type = clone.getType();
-	this.method = clone.getMethod();
-	this.field = clone.getField();
-	this.newParent = clone.getNewParent();
+        
     }
-
-    public void setMethod(MethodNode method) {
-	this.method = method;
+    
+    /**
+     * 
+     * @param nodes
+     */
+    public Allele(CodeNode ... nodes) {
+        setOperands(nodes);
     }
-
-    public void setField(FieldNode field) {
-	this.field = field;
+    
+    /**
+     * 
+     * @return
+     */
+    public List<CodeNode> getOperands() {
+        return operands;
     }
-
-    public void setNewParent(ClassNode newParent) {
-	this.newParent = newParent;
+    
+    /**
+     * 
+     * @return
+     */
+    public Refactoring getRefactoring() {
+        return refactoring;
     }
-
-    public String getType() {
-	return type;
+    
+    /**
+     * 
+     * @param nodes
+     */
+    public void setOperands(CodeNode ... nodes) {
+        operands = new ArrayList<CodeNode>();
+        for (int i = 0; i < nodes.length; i++) {
+            operands.add(nodes[i]);
+        }
     }
-
-    public MethodNode getMethod() {
-	return method;
+    
+    /**
+     * 
+     * @param refactoring
+     */
+    public void setRefactoring(Refactoring refactoring) {
+        this.refactoring = refactoring;
     }
-
-    public FieldNode getField() {
-	return field;
-    }
-
-    public ClassNode getNewParent() {
-	return newParent;
-    }
-
+    
+    /**
+     * 
+     */
     public void print() {
-	System.out.print(type + ": (" + (type.equals("MoveMethod") ? method.getName() : field.getName()) + ", " + newParent + ") ");
+        // TODO stub method
+        throw new UnsupportedOperationException("Method not yet implemented");
     }
 }

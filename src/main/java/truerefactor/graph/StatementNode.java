@@ -4,63 +4,75 @@
 package truerefactor.graph;
 
 /**
- * 
  * @author Isaac
- *
  */
-public class StatementNode extends Node {
+public class StatementNode extends CodeNode {
 
-	private String statement;
-	private MethodNode method;
-	
-	/**
-	 * 
-	 * @param statement
-	 */
-	public StatementNode(String statement) {
-		super();
-		this.statement = statement;
-	}
-	
-	/**
-	 * @return the statement
-	 */
-	public String getStatement() {
-		return statement;
-	}
+    /**
+     * 
+     */
+    private MethodNode parent;
 
-	/**
-	 * @param statement the statement to set
-	 */
-	public void setStatement(String statement) {
-		this.statement = statement;
-	}
+    /**
+     * @return the parent
+     */
+    public MethodNode getParent()
+    {
+        return parent;
+    }
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#clone()
-	 */
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-		StatementNode temp = (StatementNode)super.clone();
-		temp.setStatement(String.copyValueOf(statement.toCharArray()));
-		
-		return temp;
-	}
-	
-	/**
-	 * 
-	 * @param method
-	 */
-	public void setMethod(MethodNode method) {
-		this.method = method;
-	}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public MethodNode getMethod() {
-		return method;
-	}
+    /**
+     * @param parent
+     *            the parent to set
+     */
+    public void setParent(MethodNode parent)
+    {
+        this.parent = parent;
+    }
+
+    /**
+     * @param identifier
+     * @param code
+     */
+    public StatementNode(String identifier, String code)
+    {
+        super(identifier, code);
+        // TODO Auto-generated constructor stub
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see
+     * truerefactor.graph.CodeNode#add(truerefactor.graph.CodeNode)
+     */
+    @Override
+    public void add(CodeNode child)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see
+     * truerefactor.graph.CodeNode#remove(truerefactor.graph.CodeNode)
+     */
+    @Override
+    public void remove(CodeNode child)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see truerefactor.graph.CodeNode#getChild(java.lang.String)
+     */
+    @Override
+    public CodeNode getChild(String identfier)
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

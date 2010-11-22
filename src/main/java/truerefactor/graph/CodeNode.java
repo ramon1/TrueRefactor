@@ -4,38 +4,60 @@
 package truerefactor.graph;
 
 /**
- * DependentNode - A Node used to represent an IUpdatable in a CodeGraph.
- * 
  * @author Isaac
+ *
  */
-public class CodeNode extends Node {
+public abstract class CodeNode {
 
     /**
-     * The value of this node from which all outgoing Nodes are dependent and
-     * upon all incoming nodes this IUpdatable depends
-     */
-    private String value;
-
-    /**
-     * Constructs a new DependentNode with the provided IUpdatable as its value.
      * 
-     * @param value
-     *            the IUpdatable contained within this node
      */
-    public CodeNode(String value)
-    {
-        super();
-        this.value = value;
+    protected String code;
+    /**
+     * 
+     */
+    protected String identifier;
+    
+    /**
+     * 
+     * @param identifier
+     * @param code
+     */
+    public CodeNode(String identifier, String code) {
+        this.identifier = identifier;
+        this.code = code;
     }
-
+    
     /**
-     * Returns the IUpdatable contained within this node.
      * 
-     * @return the IUpdatable stored in this Node
+     * @param child
      */
-    public String getValue()
+    public abstract void add(CodeNode child);
+    
+    /**
+     * 
+     * @param child
+     */
+    public abstract void remove(CodeNode child);
+    
+    /**
+     * 
+     * @param identfier
+     * @return
+     */
+    public abstract CodeNode getChild(String identfier);
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode()
     {
-        return value;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((code == null) ? 0 : code.hashCode());
+        result = prime * result + ((identifier == null) ? 0 : identifier.hashCode());
+        return result;
     }
 
     /* (non-Javadoc)
@@ -44,19 +66,41 @@ public class CodeNode extends Node {
     @Override
     public boolean equals(Object obj)
     {
-        if (!super.equals(obj))
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
         {
             return false;
         }
-        
-        if (obj instanceof CodeNode) {
-            CodeNode dn = (CodeNode)obj;
-            
-            if (this.value.equals(dn.getValue())) {
-                return true;
+        if (!(obj instanceof CodeNode))
+        {
+            return false;
+        }
+        CodeNode other = (CodeNode) obj;
+        if (code == null)
+        {
+            if (other.code != null)
+            {
+                return false;
             }
         }
-        
-        return false;
+        else if (!code.equals(other.code))
+        {
+            return false;
+        }
+        if (identifier == null)
+        {
+            if (other.identifier != null)
+            {
+                return false;
+            }
+        }
+        else if (!identifier.equals(other.identifier))
+        {
+            return false;
+        }
+        return true;
     }
 }
